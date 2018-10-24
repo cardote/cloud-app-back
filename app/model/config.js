@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 module.exports = (app) => {
     const object = {};
 
-    const uri = 'mongodb://localhost:27017/NOME DO DB';
+    const uri = 'mongodb://localhost:27017/startup';
 
     mongoose.set('useFindAndModify', false);
     mongoose.connect(uri, { useNewUrlParser: true });

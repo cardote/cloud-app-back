@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 module.exports = (app) => {
-    const object = {};
-
     const Schema = mongoose.Schema;
     const Usuario = new Schema({
         nome: { type: String },

@@ -29,11 +29,12 @@ app.use(bodyParser.json());
 /**
  * Autoload com o consign
  */
-consign({ cwd: 'app' })
+consign({ cwd: `${__dirname}/app` })
     .include('model')
     .then('controller')
+    .then('route')
     .into(app);
 
 // inicia o servidor
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port, (req, res) => console.log(`Servidor iniciado em: http://localhost:${port}`));
