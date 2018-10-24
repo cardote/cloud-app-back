@@ -1,12 +1,12 @@
-module.exports = (app) => {
+module.exports = function (app) {
     const usuario = app.controller.usuario;
     const entretenimento = app.controller.entretenimento;
 
-
-
     // usuario
-    app.post('/usuario/new', (req, res) => usuario.new(res, req.body));
     app.get('/usuarios', (req, res) => usuario.index(req, res));
+    
+    app.post('/usuario/login', (req, res) => usuario.login(req, res));
+    app.post('/usuario/new', (req, res) => usuario.new(res, req.body));
     app.post('/usuario/update', (req, res) => usuario.update(res, req.body));
     app.post('/usuario/delete', (req, res) => usuario.delete(res, req.body.nome));
 
@@ -17,7 +17,7 @@ module.exports = (app) => {
     app.post('/entretenimento/delete', (req, res) => entretenimento.delete(res, req.body.cnpj));
 
     // 404
-    app.get('*', (req, res) => res.redirect('/'));
+    app.get('*', (req, res) => res.redirect('/usuarios'));
 
     return this;
 }
