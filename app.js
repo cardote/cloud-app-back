@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 /**
  * Autoload com o consign
  */
-consign({ cwd: `${__dirname}/app` })
+consign({ cwd: 'app' })
     .include('model')
     .then('controller')
     .then('route')
